@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Anclas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            background: #555;
+            padding: 1rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 50px;
+            min-height: 100vh;
+        }
+        .top-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="inicio">
+        <h1>Mi Página Web</h1>
+    </header>
+    
+    <nav>
+        <a href="#seccion1">Sección 1</a>
+        <a href="#seccion2">Sección 2</a>
+        <a href="#seccion3">Sección 3</a>
+    </nav>
+    
+    <main>
+        <section id="seccion1">
+            <h2>Sección 1</h2>
+            <p>Contenido de la primera sección.</p>
+            <a class="top-link" href="#inicio">⬆ Ir arriba</a>
+        </section>
+        
+        <section id="seccion2">
+            <h2>Sección 2</h2>
+            <p>Contenido de la segunda sección.</p>
+            <a class="top-link" href="#inicio">⬆ Ir arriba</a>
+        </section>
+        
+        <section id="seccion3">
+            <h2>Sección 3</h2>
+            <p>Contenido de la tercera sección.</p>
+            <a class="top-link" href="#inicio">⬆ Ir arriba</a>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Mi Página Web</p>
+    </footer>
+</body>
+</html>
