@@ -1,17 +1,54 @@
+<!-- Ejercicio 5: Validación de número de teléfono -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SolucionDocument</title>
+    <title>Validación de Teléfono</title>
 </head>
 <body>
-    <form action="/action_page.php">
-        <label for="fname">¿Cuál es tu nombre?</label><br>  ==
-        <input type="text" id="name" name="name"><br>
-        <input type="submit" value="Submit" Enable>
+    <form id="formTelefono">
+        <label for="telefono">Número de Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" placeholder="Debe tener 9 dígitos" pattern="\d{9}" required>
+        <span id="errorTelefono" style="color: red; display: none;">El número debe tener 9 dígitos.</span>
+        <button type="submit">Enviar</button>
     </form>
     
+    <script>
+        document.getElementById("formTelefono").addEventListener("submit", function(event) {
+            let telefono = document.getElementById("telefono");
+            let error = document.getElementById("errorTelefono");
+            if (!telefono.checkValidity()) {
+                error.style.display = "inline";
+                event.preventDefault();
+            } else {
+                error.style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
 
+<!-- Ejercicio 6: Formulario con envío a FormSubmit -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+</head>
+<body>
+    <form action="https://formsubmit.co/tu_correo@example.com" method="POST">
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" pattern="\d{9}" placeholder="Debe tener 9 dígitos" required>
+        <br>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
